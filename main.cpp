@@ -17,6 +17,16 @@ int main() {
         cout << "Elige una opción: ";
         cin >> opcion;
         cin.ignore();
+        if (opcion == 1) {
+            if (cantidad < MAX) {
+                cout << "Ingresa la tarea: ";
+                getline(cin, tareas[cantidad]);
+                cantidad++;
+                cout << "Tarea agregada.\n";
+            } else {
+                cout << "Límite de tareas alcanzado.\n";
+            }
+        }
 
 
     } while (opcion != 4);
