@@ -26,7 +26,30 @@ int main() {
             } else {
                 cout << "Límite de tareas alcanzado.\n";
             }
+        } else if (opcion == 2) {
+            if (cantidad == 0) {
+                cout << "No hay tareas registradas.\n";
+            } else {
+                cout << "\nTUS TAREAS:\n";
+                for (int i = 0; i < cantidad; i++) {
+                    cout << i + 1 << ". " << tareas[i] << endl;
+                }
+            }
+        } else if (opcion == 3) {
+            string nombreArchivo;
+            cout << "Escribe el nombre del archivo (sin '.txt'): ";
+            getline(cin, nombreArchivo);
+            nombreArchivo += ".txt";
+
+            ofstream archivo(nombreArchivo);
+            for (int i = 0; i < cantidad; i++) {
+                archivo << tareas[i] << endl;
+            }
+            archivo.close();
+            cout << "Tareas guardadas en '" << nombreArchivo << "'.\n";
         }
+
+        
 
 
     } while (opcion != 4);
