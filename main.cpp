@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+    system("chcp 65001");
     const int MAX = 10; // el maximo de tareas a ingresar
     string tareas[MAX]; // arreglo para guardar tareas
     int cantidad = 0;   // la cantidad de tareas registradas
@@ -47,10 +48,11 @@ int main() {
             }
             archivo.close();
             cout << "Tareas guardadas en '" << nombreArchivo << "'.\n";
+        } else if (opcion == 4) {
+            cout << "Hasta la próxima.\n";
+        } else {
+            cout << "Opción no válida.\n";
         }
-
-        
-
 
     } while (opcion != 4);
 
